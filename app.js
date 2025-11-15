@@ -5,6 +5,12 @@ const express = require("express");
           app.use(cors());
           app.use(express.json());
 
+          //para render 
+          app.get("/", (req, res) => {
+            res.send("Backend funcionando correctamente 🚀");
+          });
+
+
           // Conecta las rutas
           const questionsRoutes = require("./routes/questions.routes");
           app.use("/api/questions", questionsRoutes);
